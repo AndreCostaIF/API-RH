@@ -12,6 +12,7 @@ on:
     branches: [ main ]
  
 
+
 jobs:
   build:
 
@@ -32,7 +33,7 @@ jobs:
         postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
         postgresql db: 'crudCliente'
         postgresql user: 'postgres'
-        postgresql password: '1'
+        postgresql password: 'admin'
     - name: Permissão para executar o gradlew
       run: chmod +x ./gradlew
     - name: Build with Gradle
