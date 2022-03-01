@@ -45,7 +45,7 @@ jobs:
       with:
         heroku_api_key: ${{secrets.API_KEY}}
         heroku_app_name: "service-api-rh" #Must be unique in Heroku
-        heroku_email: "iramarbsi@gmail.com"
+        heroku_email: "miqscosta@gmail.com"
         usedocker: "true"  
   
      
