@@ -21,6 +21,12 @@ public class FuncionarioController {
     @Autowired
     FuncionarioService funcionarioService;
 
+
+    @GetMapping(path = "/status")
+    public ResponseEntity<?> ImHere(){
+        return ResponseEntity.status(HttpStatus.OK).body("Serviço ONLINE!");}
+
+
     //LIST ALL CLIENTS
     @GetMapping(path = "/clientes")
     public ResponseEntity<List<Funcionario>> listAll(){
