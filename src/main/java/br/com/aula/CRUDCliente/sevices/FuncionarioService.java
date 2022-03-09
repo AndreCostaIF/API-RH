@@ -60,7 +60,7 @@ public class FuncionarioService {
 
     public Funcionario login(Usuario user){
 
-        return funcionarioRepository.login(user.getUser(),user.getPassword());
+        return funcionarioRepository.login(user.getUsername(),user.getPassword());
     }
 
     public  List<Funcionario> searchByName(String name){
