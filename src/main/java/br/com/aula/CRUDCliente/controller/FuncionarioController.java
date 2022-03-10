@@ -15,7 +15,7 @@ import java.util.List;
 
 @Controller
 @ResponseBody //RETURN JSON
-@CrossOrigin(originPatterns = "http://localhost:80/moduloRh/public/", allowCredentials = "true")
+@CrossOrigin(originPatterns = "http://localhost/moduloRh/public/", allowCredentials = "true")
 @RequestMapping(path = "/api")
 public class FuncionarioController {
 
