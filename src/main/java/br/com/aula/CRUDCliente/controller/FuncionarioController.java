@@ -66,6 +66,9 @@ public class FuncionarioController {
         }
     }
 
+
+
+
     //DELETE CLIENT
     @DeleteMapping(path = "/cliente/delete/{id}")
     public ResponseEntity<?> deletarCliente(@PathVariable  Long id){
@@ -77,9 +80,22 @@ public class FuncionarioController {
         }
     }
 
-    @PostMapping(path = "/login")
-    public ResponseEntity<Funcionario> login(@RequestBody Usuario user){
-        Funcionario cliente = funcionarioService.login(user);
+//    @PostMapping(path = "/login")
+//    public ResponseEntity<Funcionario> login(@RequestBody Usuario user){
+//        Funcionario cliente = funcionarioService.login(user);
+//
+//        if(cliente != null){
+//            return ResponseEntity.status(HttpStatus.OK).body(cliente);
+//        }else{
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+//        }
+//
+//    }
+
+
+    @GetMapping(path = "/login")
+    public ResponseEntity<Funcionario> login(@RequestParam(value = "user") String user, @RequestParam(value = "pass") String pass){
+        Funcionario cliente = funcionarioService.login(user, pass);
 
         if(cliente != null){
             return ResponseEntity.status(HttpStatus.OK).body(cliente);
