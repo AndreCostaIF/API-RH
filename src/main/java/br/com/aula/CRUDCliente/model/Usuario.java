@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 @Builder
 
 //ANNOTATION JPA
@@ -34,7 +34,9 @@ public class Usuario implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
 
+    @NonNull
     private String username;
+    @NonNull
     private String password;
 
     //ROLE_ADMIN ROLE_USER
