@@ -94,8 +94,8 @@ public class FuncionarioController {
 
 
     @GetMapping(path = "/login")
-    public ResponseEntity<Funcionario> login(@RequestParam(value = "user") String user, @RequestParam(value = "pass") String pass){
-        Funcionario cliente = funcionarioService.login(user, pass);
+    public ResponseEntity<Funcionario> login(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password){
+        Funcionario cliente = funcionarioService.login(username, password);
 
         if(cliente != null){
             return ResponseEntity.status(HttpStatus.OK).body(cliente);

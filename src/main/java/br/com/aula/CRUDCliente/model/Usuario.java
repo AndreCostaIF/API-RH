@@ -36,6 +36,7 @@ public class Usuario implements UserDetails {
 
     @NonNull
     private String username;
+
     @NonNull
     private String password;
 
