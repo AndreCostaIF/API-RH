@@ -50,6 +50,7 @@ public class PaymentService {
         Funcionario funcionario = payment.getFuncionario();
         funcionario.setDataUltimoPag(payment.getDate_payment());
         double valorPago = payment.getValue_paid() - funcionario.getInss();
+
         payment.setValue_paid(valorPago);
         funcionarioService.update(funcionario);
         return paymentRepository.save(payment);

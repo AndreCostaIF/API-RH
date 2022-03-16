@@ -127,17 +127,21 @@ public class Funcionario {
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         double resultado = 0;
         try{
-            Date date = formatador.parse(this.dataIngresso);
 
+            Date dataAtual = new Date();
+            String dateToStr = String.format("%1$td/%1$tm/%1$tY", dataAtual);
 
-            Calendar dataIgresso = Calendar.getInstance();
-            Calendar dataAtual = Calendar.getInstance();
-            dataIgresso.setTime(date);
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            Date dataInicio = format.parse(this.dataIngresso);
+            Date dataFim = format.parse(dateToStr);
 
-            int mesesTrabalhados = +dataAtual.get(Calendar.MONTH)-dataIgresso.get(Calendar.MONTH);
+            final double MES_EM_MILISEGUNDOS = 30.0 * 24.0 * 60.0 * 60.0 * 1000.0;
+
+            double numeroDeMeses = Math.round((double)((dataFim.getTime() - dataInicio.getTime())/MES_EM_MILISEGUNDOS));
+
 
             double calculo = this.cargo.getSalario() / 12;
-            this.decimoTerceiro = Math.round(calculo * mesesTrabalhados);
+            this.decimoTerceiro = Math.round(calculo * numeroDeMeses);
         }catch (ParseException e){
             e.getMessage();
         }
