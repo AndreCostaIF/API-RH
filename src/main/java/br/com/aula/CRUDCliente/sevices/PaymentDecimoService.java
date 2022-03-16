@@ -51,6 +51,7 @@ public class PaymentDecimoService {
     public PaymentDecimo save(PaymentDecimo payment){
         Funcionario funcionario = payment.getFuncionario();
         funcionario.setPagamentoDecimo(payment.getDate_payment());
+        funcionario.setDecimoTerceiro(0.0);
         payment.setValue_paid(funcionario.getDecimoTerceiro());
         funcionarioService.update(funcionario);
         return paymentDecimoRepository.save(payment);
