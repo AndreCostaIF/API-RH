@@ -80,12 +80,9 @@ public class Funcionario {
     private String ctps;
 
     @NonNull
-    @Column(name = "usuario", nullable = false, unique =true)
-    private String user;
-
-    @NonNull
-    @Column(name = "password", nullable = false)
-    private String password;
+    @OneToOne
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id")
+    private Usuario usuario;
 
     @Column(name = "street")
     private String street;
